@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PLAN NA WIECZÓR</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --acid-green:#b6ff00;
+  --hot-pink:#ff2d78;
+  --electric-blue:#00f0ff;
+  --orange:#ff6a00;
+  --bg:#050505;
+  --text:#f0f0f0;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Space Mono', monospace;
+  overflow-x:hidden;
+}
+
+/* ===== BACKGROUND ===== */
+
+body::before{
+  content:'';
+  position:fixed;
+  inset:0;
+  background:
+  repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 3px,
+    rgba(255,255,255,.02) 3px,
+    rgba(255,255,255,.02) 4px
+  );
+  pointer-events:none;
+  z-index:999;
+}
+
+.bg{
+  position:fixed;
+  inset:0;
+  overflow:hidden;
+  z-index:-1;
+}
+
+.blob{
+  position:absolute;
+  border-radius:50%;
+  filter:blur(100px);
+  opacity:.15;
+}
+
+.b1{
+  width:600px;
+  height:600px;
+  background:var(--acid-green);
+  top:-200px;
+  left:-100px;
+}
+
+.b2{
+  width:500px;
+  height:500px;
+  background:var(--hot-pink);
+  bottom:-200px;
+  right:-100px;
+}
+
+.b3{
+  width:450px;
+  height:450px;
+  background:var(--electric-blue);
+  top:40%;
+  left:40%;
+}
+
+/* ===== NAV ===== */
+
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:2rem 3rem;
+}
+
+.logo{
+  font-family:'Bebas Neue';
+  letter-spacing:.3em;
+  color:var(--acid-green);
+}
+
+.back{
+  color:rgba(255,255,255,.5);
+  text-decoration:none;
+  font-size:.75rem;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+}
+
+.back:hover{
+  color:var(--hot-pink);
+}
+
+/* ===== HERO ===== */
+
+.hero{
+  text-align:center;
+  padding:3rem 2rem 2rem;
+}
+
+.eyebrow{
+  color:var(--electric-blue);
+  letter-spacing:.4em;
+  font-size:.7rem;
+  margin-bottom:1rem;
+}
+
+h1{
+  font-family:'Bebas Neue';
+  font-size:clamp(4rem,12vw,10rem);
+  line-height:.9;
+}
+
+.main{
+  display:block;
+  color:white;
+}
+
+.accent{
+  display:block;
+  color:transparent;
+  -webkit-text-stroke:2px var(--acid-green);
+  text-shadow:0 0 40px rgba(182,255,0,.3);
+}
+
+/* ===== TIMELINE ===== */
+
+.timeline{
+  max-width:1000px;
+  margin:4rem auto;
+  padding:0 2rem;
+  display:grid;
+  gap:1.5rem;
+}
+
+.event{
+  display:grid;
+  grid-template-columns:140px 1fr;
+  gap:2rem;
+  padding:1.8rem;
+  border:1px solid rgba(255,255,255,.08);
+  background:rgba(255,255,255,.03);
+  backdrop-filter:blur(20px);
+  transition:.3s;
+}
+
+.event:hover{
+  transform:translateY(-4px);
+  border-color:rgba(182,255,0,.4);
+}
+
+.time{
+  font-family:'Bebas Neue';
+  font-size:2.5rem;
+  color:var(--acid-green);
+}
+
+.label{
+  font-size:.7rem;
+  letter-spacing:.3em;
+  color:var(--hot-pink);
+  text-transform:uppercase;
+  margin-bottom:.8rem;
+}
+
+.title{
+  font-size:1.2rem;
+  font-weight:700;
+  margin-bottom:.4rem;
+}
+
+.desc{
+  color:rgba(255,255,255,.6);
+  line-height:1.6;
+  font-size:.9rem;
+}
+
+/* ===== FINAL CARD ===== */
+
+.final{
+  max-width:900px;
+  margin:4rem auto;
+  padding:2rem;
+}
+
+.final-box{
+  border:1px solid rgba(0,240,255,.25);
+  background:rgba(0,240,255,.04);
+  padding:3rem;
+  text-align:center;
+}
+
+.final-box h2{
+  font-family:'Bebas Neue';
+  font-size:4rem;
+  color:var(--electric-blue);
+  letter-spacing:.05em;
+}
+
+.final-box p{
+  margin-top:1rem;
+  color:rgba(255,255,255,.7);
+}
+
+/* ===== MOBILE ===== */
+
+@media(max-width:700px){
+
+.event{
+  grid-template-columns:1fr;
+  gap:1rem;
+}
+
+.time{
+  font-size:2rem;
+}
+
+nav{
+  padding:1.5rem;
+}
+
+}
+</style>
+</head>
+<body>
+
+<div class="bg">
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="blob b3"></div>
+</div>
+
+<nav>
+  <div class="logo">BDAY.EXE</div>
+  <a href="index.html" class="back">← Powrót</a>
+</nav>
+
+<section class="hero">
+
+  <div class="eyebrow">
+    ▶ ODTAJNIONY HARMONOGRAM WIECZORU
+  </div>
+
+  <h1>
+    <span class="main">PLAN NA</span>
+    <span class="accent">WIECZÓR</span>
+  </h1>
+
+</section>
+
+<section class="timeline">
+
+  <div class="event">
+    <div class="time">19:00</div>
+    <div>
+      <div class="label">Start misji</div>
+      <div class="title">Wejście do systemu</div>
+      <div class="desc">
+        Drzwi otwarte. Integracja, pierwsze drinki,
+        rozgrzewka przed głównym wydarzeniem.
+      </div>
+    </div>
+  </div>
+
+  <div class="event">
+    <div class="time">20:00</div>
+    <div>
+      <div class="label">Poziom 2</div>
+      <div class="title">Oficjalne otwarcie</div>
+      <div class="desc">
+        Powitanie załogi oraz aktywacja trybu impreza.
+      </div>
+    </div>
+  </div>
+
+  <div class="event">
+    <div class="time">21:30</div>
+    <div>
+      <div class="label">Boss Fight</div>
+      <div class="title">Tort + toast</div>
+      <div class="desc">
+        Kulminacyjny moment programu.
+        Zdjęcia, życzenia i obowiązkowy aplauz.
+      </div>
+    </div>
+  </div>
+
+  <div class="event">
+    <div class="time">22:00</div>
+    <div>
+      <div class="label">Overdrive</div>
+      <div class="title">Parkiet bez limitu</div>
+      <div class="desc">
+        DJ przejmuje kontrolę.
+        Tańce, chaos i dobre decyzje,
+        które następnego dnia będą wyglądały na złe.
+      </div>
+    </div>
+  </div>
+
+  <div class="event">
+    <div class="time">02:00+</div>
+    <div>
+      <div class="label">Endgame</div>
+      <div class="title">Nieplanowany scenariusz</div>
+      <div class="desc">
+        Dalszy przebieg wydarzeń zależy od poziomu energii uczestników.
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<section class="final">
+  <div class="final-box">
+    <h2>NO ESCAPE MODE</h2>
+    <p>
+      Po wejściu do środka obowiązuje pełne zanurzenie
+      w rzeczywistości urodzinowej.
+    </p>
+  </div>
+</section>
+
+</body>
+</html>
